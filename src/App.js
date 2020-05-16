@@ -10,6 +10,7 @@ class App extends React.Component {
         startNumber: 0
     }
 
+onbattonClick = dogshow
 
     render() {
 
