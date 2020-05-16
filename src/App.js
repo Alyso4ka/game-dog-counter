@@ -1,26 +1,57 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import dog from './image/dog.jpg';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+
+    state = {
+        dogShow: true,
+        startNumber: 0
+    }
+
+
+    render() {
+
+        return (
+            <div className='wrapper'>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+                <div className='item'>
+                    <img src={dog} className='photo'/>
+                </div>
+
+                <div className='spanStyle'>
+                    <span>0</span>
+                </div>
+
+
+            </div>
+        );
+    }
 }
 
 export default App;
+
