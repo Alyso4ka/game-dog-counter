@@ -10,7 +10,7 @@ class App extends React.Component {
         startNumber: 0
     }
 
-onbattonClick = dogshow
+// onbattonClick = dogshow тернарное выражене по классам
 
     render() {
 
