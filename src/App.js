@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import dog from './image/dog.jpg';
+
 import Dogs from "./Dogs";
 
 
@@ -19,15 +19,25 @@ class App extends React.Component {
             {id:7},
             {id:8},
             {id:9}
-        ]
+        ],
+        randomIndex: 4
     }
 
+    componentDidMount() {
+        setInterval(() => {
+            this.setState( {
+            randomIndex: () => {
+return Math.floor(Math.random()*9);
+            }
+        })
+    }, 1000)
+}
 
     render() {
 
         return (
             <div className='wrapper'>
-                <Dogs />
+                <Dogs state={this.state}/>
                 <div className='spanStyle'>
                     <span>{this.state.startNumber}</span>
                 </div>
