@@ -1,35 +1,23 @@
 import React from 'react';
 import './App.css';
-
 import Dog from "./Dog";
 
 
-class Dogs extends React.Component {
+const Dogs = (props) => {
 
-
-
-
-
-    render() {
-
-        return (
-<>
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-  <Dog />
-
-</>
-
-
-
-        );
+        let dogsDataElement = props.state.dogId.map(d => {
+            if(d.id === props.state.randomIndex) {
+                return <Dog dogClass={'photo-show'} onClickFunc={props.onClickFunc}/>
     }
+            return <Dog onClickFunc={()=>{}} dogClass={'photo'}/>
+})
+        return (
+<div>
+    {dogsDataElement}
+
+</div>
+        )
+
 }
 
 export default Dogs;

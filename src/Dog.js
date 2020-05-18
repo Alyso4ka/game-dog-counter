@@ -3,15 +3,17 @@ import './App.css';
 import dog from './image/dog.jpg';
 
 
-class Dog extends React.Component {
+
+const Dog = (props) => {
 
 
-    render() {
+        let dogClass = props.id === props.randomIndex ? 'photo-show' : 'photo';
+        let onClickHandler = props.id === props.randomIndex ? props.onClickFunc : () => {}
 
         return (
             <>
-                <div className='item'>
-                    <img src={dog} className='photo-show'/>
+                <div className='item' onClick={onClickHandler}>
+                    <img src={dog} className={props.dogClass}/>
                 </div>
 
 
@@ -20,7 +22,7 @@ class Dog extends React.Component {
 
         );
     }
-}
+
 
 export default Dog;
 

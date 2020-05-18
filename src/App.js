@@ -18,26 +18,32 @@ class App extends React.Component {
             {id:6},
             {id:7},
             {id:8},
-            {id:9}
+
         ],
         randomIndex: 4
+    }
+
+    getRandomIndex = () => {
+        return Math.floor (Math.random() * 9);
     }
 
     componentDidMount() {
         setInterval(() => {
             this.setState( {
-            randomIndex: () => {
-return Math.floor(Math.random()*9);
-            }
+randomIndex: this.getRandomIndex()
         })
     }, 1000)
+}
+
+onClickFunc = () => {
+        this.setState({startNumber: this.state.startNumber +1})
 }
 
     render() {
 
         return (
             <div className='wrapper'>
-                <Dogs state={this.state}/>
+                <Dogs state={this.state} onClickFunc={this.onClickFunc}/>
                 <div className='spanStyle'>
                     <span>{this.state.startNumber}</span>
                 </div>
