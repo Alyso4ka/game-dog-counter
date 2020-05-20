@@ -7,9 +7,9 @@ const Dogs = (props) => {
 
         let dogsDataElement = props.state.dogId.map(d => {
             if(d.id === props.state.randomIndex) {
-                return <Dog dogClass={'photo-show'} onClickFunc={props.onClickFunc}/>
+                return <Dog dogClass={'photo'} onClickFunc={props.onClickFunc}/>
     }
-            return <Dog onClickFunc={()=>{}} dogClass={'photo'}/>
+            return <Dog onClickFunc={()=>{}} dogClass={'photoShow'}/>
 })
         return (
 <div>

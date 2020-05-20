@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-
 import Dogs from "./Dogs";
+import DogVoice from './audio/dog.mp3';
 
 
 class App extends React.Component {
@@ -27,16 +27,25 @@ class App extends React.Component {
         return Math.floor (Math.random() * 9);
     }
 
+
+audio = new Audio(DogVoice);
+
+
     componentDidMount() {
         setInterval(() => {
             this.setState( {
-randomIndex: this.getRandomIndex()
-        })
+randomIndex: this.getRandomIndex(),
+            })
+
     }, 1000)
 }
 
 onClickFunc = () => {
         this.setState({startNumber: this.state.startNumber +1})
+    this.audio.currentTime = 0;
+    this.audio.play();
+
+
 }
 
     render() {
